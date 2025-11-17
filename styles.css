@@ -1,0 +1,492 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #2c3e50;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #2c3e50;
+    border: 3px solid #c5a572;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.theme-toggle:hover {
+    background-color: #c5a572;
+    transform: scale(1.1);
+}
+
+.theme-icon {
+    filter: none;
+}
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+body.dark-mode .ficha-card {
+    background: #2c2c2c;
+    border-color: #c5a572;
+}
+
+body.dark-mode .header-section {
+    background-color: #0d0d0d;
+}
+
+body.dark-mode .section-title {
+    color: #c5a572;
+}
+
+body.dark-mode .info-item {
+    background: #333333;
+    border-bottom-color: #444444;
+}
+
+body.dark-mode .info-item:hover {
+    background: #3a3a3a;
+}
+
+body.dark-mode .info-label {
+    color: #c5a572;
+}
+
+body.dark-mode .info-value {
+    color: #d0d0d0;
+}
+
+body.dark-mode .cards-title {
+    color: #c5a572;
+}
+
+body.dark-mode .card {
+    background-color: #1a1a1a;
+    border-color: #c5a572;
+}
+
+body.dark-mode .card:hover {
+    background-color: #c5a572;
+    color: black;
+}
+
+body.dark-mode .theme-toggle {
+    background-color: #c5a572;
+    border-color: #2c3e50;
+}
+
+body.dark-mode .theme-toggle:hover {
+    background-color: #d4b682;
+}
+
+
+.container {
+    flex: 1;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.ficha-card {
+    background: white;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    border: 2px solid #2c3e50;
+}
+
+.header-section {
+    text-align: center;
+    margin-bottom: 40px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 30px;
+    border-radius: 0;
+    margin: -40px -40px 30px -40px;
+}
+
+.foto-perfil {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #c5a572;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.nombre {
+    font-size: 2.5em;
+    color: #c5a572; 
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.info-section {
+    margin-bottom: 35px;
+}
+
+.section-title {
+    color: #2c3e50;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #c5a572;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.info-personal {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    border: none;
+}
+
+.info-item {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    padding: 18px 20px;
+    border-bottom: 1px solid #e0e0e0;
+    gap: 30px;
+    align-items: start;
+    background: #fafafa;
+    margin-bottom: 2px;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.info-item:first-child {
+    padding-top: 18px;
+}
+
+.info-item:hover {
+    background: #f5f5f5;
+}
+
+.info-label {
+    font-weight: bold;
+    color: #2c3e50;
+    font-size: 0.9em;
+    letter-spacing: 0.3px;
+}
+
+.info-label::after {
+    content: ':';
+    margin-left: 2px;
+}
+
+.info-value {
+    color: #34495e;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+.cards-section {
+    margin-top: 30px;
+}
+
+.cards-title {
+    text-align: center;
+    font-size: 1.8em;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #c5a572;
+    padding-bottom: 10px;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: #2c3e50;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 3px solid #2c3e50;
+}
+
+.card:hover {
+    background-color: #c5a572;
+    color: black;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.card-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.card-link {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+    border: 2px solid transparent;
+}
+
+.card-link:hover {
+    background-color: white;
+    color: #2c3e50;
+    border: 2px solid white;
+}
+
+.card:hover .card-link {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: black;
+}
+
+.card:hover .card-link:hover {
+    background-color: white;
+    color: #2c3e50;
+}
+
+/* Pie de página */
+footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 0.95em;
+}
+
+/* Responsive */
+/* Tablets y pantallas medianas (768px - 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 95%;
+        margin: 30px auto;
+    }
+
+    .cards-container {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 20px auto;
+        padding: 10px;
+    }
+
+    .ficha-card {
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .header-section {
+        margin: -20px -20px 20px -20px;
+        padding: 20px;
+    }
+
+    .foto-perfil {
+        width: 120px;
+        height: 120px;
+    }
+
+    .nombre {
+        font-size: 1.8em;
+    }
+
+    .section-title {
+        font-size: 1.1em;
+        margin-bottom: 15px;
+    }
+
+    .info-personal {
+        padding: 0;
+    }
+
+    .info-item {
+        grid-template-columns: 1fr;
+        gap: 5px;
+        padding: 15px;
+        margin-bottom: 2px;
+    }
+
+    .info-label {
+        font-size: 0.85em;
+        padding-bottom: 3px;
+    }
+
+    .info-value {
+        font-size: 0.95em;
+        font-weight: 500;
+    }
+
+    .cards-title {
+        font-size: 1.5em;
+    }
+
+    .cards-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .card {
+        padding: 25px;
+    }
+
+    .card-title {
+        font-size: 1.3em;
+    }
+
+    footer p {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .theme-toggle {
+        width: 45px;
+        height: 45px;
+        top: 15px;
+        right: 15px;
+        font-size: 1.3em;
+    }
+
+    .container {
+        margin: 10px auto;
+        padding: 8px;
+    }
+
+    .ficha-card {
+        padding: 15px;
+        border-width: 1px;
+    }
+
+    .header-section {
+        margin: -15px -15px 15px -15px;
+        padding: 15px;
+    }
+
+    .foto-perfil {
+        width: 100px;
+        height: 100px;
+        border-width: 2px;
+    }
+
+    .nombre {
+        font-size: 1.5em;
+    }
+
+    .section-title {
+        font-size: 1em;
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+    }
+
+    .info-personal {
+        padding: 0;
+    }
+
+    .info-item {
+        padding: 12px;
+        gap: 4px;
+    }
+
+    .info-label {
+        font-size: 0.8em;
+    }
+
+    .info-value {
+        font-size: 0.9em;
+    }
+
+    .cards-title {
+        font-size: 1.3em;
+        padding-bottom: 8px;
+    }
+
+    .card {
+        padding: 20px;
+        border-width: 2px;
+    }
+
+    .card-title {
+        font-size: 1.2em;
+        margin-bottom: 15px;
+    }
+
+    .card-link {
+        padding: 8px 15px;
+        font-size: 0.85em;
+    }
+
+    footer {
+        padding: 15px;
+    }
+
+    footer p {
+        font-size: 0.85em;
+    }
+}
+
+@media (max-width: 320px) {
+    .nombre {
+        font-size: 1.3em;
+    }
+
+    .foto-perfil {
+        width: 80px;
+        height: 80px;
+    }
+
+    .card-title {
+        font-size: 1.1em;
+    }
+
+    .cards-title {
+        font-size: 1.2em;
+    }
+}
